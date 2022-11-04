@@ -94,13 +94,18 @@ public class Exercises2 {
     
     
     public int days(String date1, String date2){
-        //dd/MM/aaaa
+        //dd/MM/aaaa 
+        
         String days1[] , days2[];
         int days;
+        int years;
+        int months;
         days1 = date1.split("/");
         days2 = date2.split("/");
-        days = 30 - Integer.parseInt(days1[0]) + Integer.parseInt(days2[0]);
-        //Se puede considerar meses bisiestos
+        years = (Integer.parseInt(days2[2]) - Integer.parseInt(days1[2])) * 365;
+        months = (Integer.parseInt(days2[1]) - Integer.parseInt(days1[1])) * 31 - Integer.parseInt(days2[0]);
+        days = 31 - Integer.parseInt(days1[0]) + Integer.parseInt(days2[0]) + years + months;
+        System.out.println("No considero ni años bisiestos ni meses con menos de 31 días");
         return days;
         
     }

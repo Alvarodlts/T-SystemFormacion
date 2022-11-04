@@ -54,7 +54,7 @@ public class Ejercicios {
         
         //DATES
         System.out.println("La diferencia de días es de: " +
-                exercises2.days("23/09/1994", "23/10/1994"));
+                exercises2.days("23/09/1994", "25/11/1996"));
         
         //FIBONACCI
         System.out.println("La sucesion recursiva de fibonacci de 25: " + 
@@ -95,8 +95,7 @@ public class Ejercicios {
                 calculatorPro.operator(3, "!", 0));
         
 
-       
-        
+        Products <PhoneBook> producto = new Products("agenda", 23);
         // -------------- EXCECPCIONES --------------------//
         /*System.out.println("-- EXCEPCIONES --");
         int resultado = 10;
@@ -214,15 +213,7 @@ public class Ejercicios {
         System.out.println(calendar3.get(Calendar.HOUR) + ":" + calendar3.get(Calendar.MINUTE));*/
         
       
-        Stack <Integer> stack = new Stack();
-
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
-        System.out.println(stack);
-        System.out.println(stack.peek());
-        stack.pop();
-        System.out.println(stack);
+        
       
         
     }
