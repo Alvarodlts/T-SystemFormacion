@@ -11,37 +11,34 @@ package com.curso.ejercicios;
  */
 public class Products <T>{
     
-    private T productName;
-    private T productPrice;
+    private String productName;
+    private int productPrice;
     
     public Products(){
-        productName = null;
-        productPrice = null;
+        productName = "";
+        productPrice = 0;
+    }
+    public Products(String productName, int productPrice){
+        this.productName = productName;
+        this.productPrice = productPrice;
     }
 
-    public T getProductType() {
+    public String getProductName() {
         return productName;
     }
 
-    public void setProductType(T productType) {
-        this.productName = productType;
-    }
-
-    public T getProductName() {
-        return productName;
-    }
-
-    public void setProductName(T productName) {
+    public void setProductName(String productName) {
         this.productName = productName;
     }
 
-    public T getProductPrice() {
+    public int getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(T productPrice) {
+    public void setProductPrice(int productPrice) {
         this.productPrice = productPrice;
     }
     
+
     
 }
