@@ -47,8 +47,7 @@ public class Exercises {
         }
         return reverse;
     }
-    
-    
+
     public int numFactorial(int num) {
         int factorial = 1;
 
@@ -88,49 +87,41 @@ public class Exercises {
         return sum == amstrong;
     }
 
-    public ArrayList<Integer> arroz(int peso) {
-        ArrayList<Integer> cantidad_usados = new ArrayList();
-        ArrayList<Integer> paquetes = new ArrayList();
-        int peso_actual = 0;
-        paquetes.add(1);
-        paquetes.add(3);
-        paquetes.add(5);
-        cantidad_usados.add(0);
-        cantidad_usados.add(0);
-        cantidad_usados.add(0);
-        int arroz1 = 0;
-        int arroz2 = 0;
-        int arroz3 = 0;
-        int paquetes_totales = 0;
-        int peso_objetivo = peso;
+    public int getRicesPackages(double weigth) throws IllegalArgumentException, Exception {
+        boolean bool = true;
+        if (weigth < 0) {
+            throw new IllegalArgumentException("Invalid weight");
+        } else {
 
-        while (peso_actual < peso_objetivo) {
+            int current_weigth = 0;
+            int total_packages = 0;
+            double weigth_objetive = weigth;
+            while (current_weigth < weigth_objetive && bool) {
+                try {
+                    if (weigth_objetive > current_weigth && weigth >= 5) {
+                        current_weigth += 5;
+                        weigth -= 5;
+                        total_packages++;
+                    } else if (weigth_objetive > current_weigth && weigth >= 3 && weigth < 5) {
+                        current_weigth += 3;
+                        weigth -= 3;
+                        total_packages++;
+                    } else if (weigth_objetive > current_weigth && weigth >= 1 && weigth < 3) {
+                        current_weigth += 1;
+                        weigth -= 1;
+                        total_packages++;
+                    } else if (weigth < 1) {
+                        throw new Exception();
+                    }
+                } catch (Exception ex) {
+                    System.out.println("Error: No se puede llegar a la solucion");
+                    bool = false;
+                    total_packages = -1;
+                }
 
-            if (peso_objetivo > peso_actual && peso >= 5) {
-                peso_actual += 5;
-                peso -= 5;
-                arroz3++;
-                paquetes_totales++;
-                cantidad_usados.set(2, arroz3);
             }
-
-            if (peso_objetivo > peso_actual && peso >= 3 && peso < 5) {
-                peso_actual += 3;
-                peso -= 3;
-                arroz2++;
-                paquetes_totales++;
-                cantidad_usados.set(1, arroz2);
-            }
-
-            if (peso_objetivo > peso_actual && peso >= 1 && peso < 3) {
-                peso_actual += 1;
-                peso -= 1;
-                arroz1++;
-                paquetes_totales++;
-                cantidad_usados.set(0, arroz1);
-            }
+            return total_packages;
         }
-        return cantidad_usados;
-    }    
+    }
 
 }

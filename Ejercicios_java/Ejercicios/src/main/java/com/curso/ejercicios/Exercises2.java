@@ -31,7 +31,8 @@ public class Exercises2 {
         int result = 0;
         roman_num = roman_num+' ';
         int length = roman_num.length()-1;
-        for (int i = 0; i < length; i++) {
+        int i = 0;
+        while (i < length) {
 
             int j = i+1;
             char next = roman_num.charAt(j);
@@ -87,6 +88,7 @@ public class Exercises2 {
                     result += 1;
                 }
             }
+            i++;
         }
         return result;
     }// Fin del metodo
@@ -117,15 +119,17 @@ public class Exercises2 {
         return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
     }
     
-    public int fibonacciDinamic(int n) {
+    public int fibonacciDynamic(int n) {
         int next = 1, current = 0, temp = 0;
         if(n == 0 || n == 1){
-            return 1;
+            current = 1;
         }
-        for (long x = 1; x <= n; x++) {
-                temp = current;
-                current = next;
-                next = next + temp;
+        else{
+            for (long x = 1; x <= n; x++) {
+                    temp = current;
+                    current = next;
+                    next = next + temp;
+            }
         }
         return current;
     }

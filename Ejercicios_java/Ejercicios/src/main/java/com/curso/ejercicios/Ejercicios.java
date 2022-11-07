@@ -27,20 +27,28 @@ import java.util.TimeZone;
  */
 public class Ejercicios {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         System.out.println("----- EJERCICIOS 1 -------");
         Exercises ejercicio = new Exercises();
         System.out.println("¿Es abba palindromo? " + ejercicio.isPalindrome("abba"));
+        System.out.println();
         System.out.println("Es aabc palabra Palindromo?: " + ejercicio.isPalindrome("aabc"));
+        System.out.println();
         System.out.println("Es 1231 Num Palindromo?: " + ejercicio.isNumPalindrome(1231));
+        System.out.println();
         System.out.println("Es 1221 Num Palindromo?: " + ejercicio.isNumPalindrome(1221));
+        System.out.println();
         System.out.println("El factorial de 5 es: " + ejercicio.numFactorial(5));
+        System.out.println();
         System.out.println(" MCD de 20 y 14 es " + ejercicio.comunDivisor(20, 14));
+        System.out.println();
         System.out.println(" ¿El número 370 es Amstrong y el 502? " + ejercicio.amstrong(370) + 
                 " " + ejercicio.amstrong(502));
+        System.out.println();
         System.out.println("Palabra al reves: hola: " + ejercicio.reverse("hola"));
-        System.out.println("Problema de arroz con peso 29Kg: " + ejercicio.arroz(29));
+        System.out.println();
+        System.out.println("Problema de arroz con peso 29.5Kg: " + ejercicio.getRicesPackages(29.5));
         System.out.println();
        
 
@@ -60,7 +68,7 @@ public class Ejercicios {
         System.out.println("La sucesion recursiva de fibonacci de 25: " + 
                 exercises2.fibonacciRecursive(25));
         System.out.println("La sucesion PD de fibonacci de 25: " + 
-                exercises2.fibonacciDinamic(25));
+                exercises2.fibonacciDynamic(25));
         
         //AREAS OF SHAPES
         Shapes square = new Square(5,5);
