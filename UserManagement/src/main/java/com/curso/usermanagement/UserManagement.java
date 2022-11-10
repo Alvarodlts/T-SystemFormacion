@@ -12,7 +12,7 @@ package com.curso.usermanagement;
 public class UserManagement {
 
     public static void main(String[] args) {
-        UserManagementInterface start = new UserManagementInterface();
+        CLI start = new CLI();
         start.systemInterface();
     }
 }
